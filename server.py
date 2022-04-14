@@ -46,10 +46,10 @@ def contact_render_method():
             mode = "error"
             return render_template("contact.html", mode=mode)
 
-
+port = 2525
 def send_email(name, email, message, **kwargs):
     try:
-        with smtplib.SMTP("smtp.gmail.com") as connection:  # yahoo: smtp.mail.yahoo.com
+        with smtplib.SMTP("smtp.gmail.com", port) as connection:  # yahoo: smtp.mail.yahoo.com
             connection.starttls()  # secure communication
             connection.login(user=MY_MAIL, password=MY_MAIL_PASSWORD)
             phone_number = kwargs.get("phone_number", "-")
