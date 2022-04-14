@@ -70,4 +70,4 @@ def send_email(name, email, message, **kwargs):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)  # Debug mode
+    app.run(debug=False)  # Debug mode
