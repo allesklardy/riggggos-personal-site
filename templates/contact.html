@@ -1,0 +1,178 @@
+<!DOCTYPE html> <!-- tells the browser to render this as an html 5 file-->
+<html lang="en" class="h-100">
+
+<head>
+    <!-- informations for the webbrowser how to handle the webpage-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Rico Finkbeiner">
+    <title>
+        Skills
+    </title>
+
+    <link rel="icon" href="static/images/favicon.png">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Own stylesheet-->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <!-- Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/4ea6bfa531.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+    <nav class="navbar bg-dark navbar-expand-sm navbar-dark">
+        <span class="navbar-brand name"><span class="fist-name">Rico</span><span
+                class="last-name">Finkbeiner</span></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Skills</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item active" href="{{url_for('skill_overview_render_method')}}">Overview</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{url_for('skill_render_method', skill='java')}}">Java</a>
+                        <a class="dropdown-item" href="#">Python</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/static/files/lebenslauf_rico_finkbeiner.pdf" download>CV(.pdf)</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('contact_render_method')}}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Navbar-->
+
+
+    <div class="content">
+
+
+        <!--title-->
+        <div class="heading m-md-5 mt-5 p-md-5 py-2 px-3 text-center bg-light text-black">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+
+                <h1 class="display-3"><strong>Contact me.</strong></h1>
+
+
+            </div>
+        </div>
+
+        <!--contact form-->
+        <div class="overview bg-dark m-md-5 my-5 text-center text-white p-3 p-md-5">
+            <!--  <div class="my-3 pt-3">
+                <h2 class="display-5">xxx</h2>
+              </div>-->
+            {% if mode=="get":%}
+            <div class="contact_form text-left">
+                <form action="{{url_for('contact_render_method')}}" method="post">
+                    <div class="form-group">
+                        <label for="inputName">Name</label>
+                        <input type="name" name="name" class="form-control" id="inputName"
+                               placeholder="Please enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="text-left">Email address</label>
+                        <input type="email" name="email" class="form-control" id="inputEmail"
+                               placeholder="Please enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPhoneNumber">Phone number<span class="text-muted"> (optional)</span></label>
+                        <input type="tel" name="phone_number" class="form-control" id="inputPhoneNumber"
+                               aria-describedby="optional" placeholder="+49">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputMessage">Message</label>
+                        <textarea type="text" name="message" class="form-control" id="inputMessage"
+                                  placeholder="Your message" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+            {%elif mode=="send"%}
+            <div class="col-md-5 p-lg-2 mx-auto my-5">
+
+                <h3 class="display-5">Success! I will answer as soon as possible.</h3>
+                <a class="btn btn-primary mb-2" href="{{url_for('contact_render_method')}}">Send another message.</a>
+                <a class="btn btn-primary mb-2" href="{{url_for('home')}}"><i class="fa-solid fa-house"></i></a>
+            </div>
+
+            {%elif mode=="error"%}
+            <div class="col-md-5 p-lg-2 mx-auto my-5">
+
+                <h3 class="display-5">Something went wrong :( Please send me an email while i'm trying to fix the
+                    error.</h3>
+                <a class="contact_me_button pb-2" href="mailto:finkbeinerrico@gmail.com">
+                    <i class="fa-solid fa-envelope"></i> finkbeinerrico@gmail.com
+
+                </a>
+
+            </div>
+            {%endif%}
+        </div>
+
+
+    </div>
+</main>
+<!-- footer-->
+<footer class="footer mt-auto">
+    <div class="bg-dark py-3 px-3 text-center text-white bottom ">
+        <div class="pb-2 buttons">
+            <a class="btn btn-outline-light" href="https://github.com/riggggo" role="button"> <i
+                    class="fa-brands fa-github"></i> GitHub</a>
+            <a class="btn btn-outline-light" href="https://www.linkedin.com/in/rico-finkbeiner-616036204/"
+               role="button"> Linked<i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <a class="contact_me_button pb-2" href="mailto:finkbeinerrico@gmail.com">
+            <i class="fa-solid fa-envelope"></i> finkbeinerrico@gmail.com
+
+        </a>
+        <div class="bottom">
+
+
+            <small>
+                <p class="copyright text-muted">
+                    ©{{current_year}} Rico Finkbeiner
+                </p>
+            </small>
+        </div>
+    </div>
+
+
+</footer>
+
+
+</body>
+
+</html>
