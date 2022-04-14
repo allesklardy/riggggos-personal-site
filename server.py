@@ -46,7 +46,7 @@ def contact_render_method():
             mode = "error"
             return render_template("contact.html", mode=mode)
 
-port = 2525
+port = 587
 def send_email(name, email, message, **kwargs):
     try:
         with smtplib.SMTP("smtp.gmail.com", port) as connection:  # yahoo: smtp.mail.yahoo.com
