@@ -1,5 +1,5 @@
 # personal-site
 My personal website
 
-##Usage
+## Usage
 Accessible at www.ricofinkbeiner.de
