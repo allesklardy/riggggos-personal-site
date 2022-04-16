@@ -29,15 +29,16 @@ body {
 }
 
 /* Mobile view*/
-@media (max-width: 1200px) and (min-height: 840px){/* - 1200px*/
-  .pc-view{
+/* currently disabled, uncomment to activate*/
+/*@media (max-width: 1200px) and (min-height: 840px){/* - 1200px*/
+/*  .pc-view{
     display: none;
   }
   
 }
 
 /* PC view*/
-@media (min-width: 1200px), (max-height: 840px){/* 1200px - */
+/*@media (min-width: 1200px), (max-height: 840px){/* 1200px - */
   .mobile-view{
     display: none;
   }
@@ -53,7 +54,7 @@ body {
   .card{
     height: 100%;
   }
-}
+/*}*/
 .background{
   position: relative;
 }
