@@ -1,19 +1,26 @@
 import os
 
+import pytz
 from flask import *
 import datetime as dt
+from dateutil import relativedelta
 import smtplib
 # using jinja
 app = Flask(__name__)  # name of the current directory
 MY_MAIL = "finkbeinerrico.service@gmail.com"
 MY_MAIL_PASSWORD = os.environ.get("MY_MAIL_PASSWORD")
 SEND_TO_MAIL = "finkbeinerrico@gmail.com"
+MY_BIRTHDAY = dt.datetime(2003, 9, 2)
 
 
 @app.route("/")
 def home():
-    current_year = dt.datetime.now().year
-    return render_template("index.html", current_year=current_year)
+    current_date = dt.datetime.now()
+    current_year = current_date.year
+    
+    my_age = relativedelta.relativedelta(current_date, MY_BIRTHDAY).years
+
+    return render_template("index.html", current_year=current_year, my_age=my_age)
 
 
 @app.route("/skills/<skill>")

@@ -16,6 +16,44 @@ body {
     font-size: xxx-large;
   }
 }
+
+@media (max-width: 900px) { /* 900px or less*/
+  .display-5{
+    font-size: x-large;
+  }
+}
+@media (max-width: 1200px) and (min-width: 900px){/* 900px - 1200px*/
+  .display-5{
+    font-size: xx-large;
+  }
+}
+
+/* Mobile view*/
+@media (max-width: 1200px){/* - 1200px*/
+  .pc-view{
+    display: none;
+  }
+  
+}
+
+/* PC view*/
+@media (min-width: 1200px){/* 1200px - */
+  .mobile-view{
+    display: none;
+  }
+  .row.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .row.display-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card{
+    height: 100%;
+  }
+}
 .background{
   position: relative;
 }
@@ -53,6 +91,7 @@ body {
 
 .logo{
   height: 160px;
+  width: auto;
   margin: auto;
 }
 
@@ -66,3 +105,24 @@ body {
 .copyright{
   margin-bottom:0px;
 }
+.skills-card-content{
+  text-align: left;
+}
+
+
+
+.content-to-scroll{
+  position: relative;
+  overflow-y: scroll;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.skills .nav-item{
+  padding: 0 5px 0 0;
+  margin: auto 0;
+}
+.skills .nav-item .last-item{
+  padding: 0;
+}
+

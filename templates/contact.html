@@ -37,9 +37,10 @@
 
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
+    <!--begin navbar-->
     <nav class="navbar bg-dark navbar-expand-sm navbar-dark">
-        <span class="navbar-brand name"><span class="fist-name">Rico</span><span
-                class="last-name">Finkbeiner</span></span>
+        <a class="navbar-brand name" href="{{url_for('home')}}"><span class="fist-name">Rico</span><span
+                class="last-name">Finkbeiner</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -47,17 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Skills</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item active" href="{{url_for('skill_overview_render_method')}}">Overview</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{url_for('skill_render_method', skill='java')}}">Java</a>
-                        <a class="dropdown-item" href="#">Python</a>
-                    </div>
+                    <a class="nav-link" href="{{url_for('skill_overview_render_method')}}">Skills</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/static/files/lebenslauf_rico_finkbeiner.pdf" download>CV(.pdf)</a>
@@ -68,8 +59,7 @@
             </ul>
         </div>
     </nav>
-
-    <!--Navbar-->
+    <!--end navbar-->
 
 
     <div class="content">
