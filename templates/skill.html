@@ -49,7 +49,7 @@
                         <a class="nav-link" href="{{url_for('skill_overview_render_method')}}">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/static/files/lebenslauf_rico_finkbeiner.pdf" download>CV(.pdf)</a>
+                        <a class="nav-link" href="/static/files/lebenslauf_rico_finkbeiner.pdf" download>CV <i class="fa-solid fa-file-arrow-down"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('contact_render_method')}}">Contact</a>
@@ -82,17 +82,17 @@
                         <row>
                             <ul class="nav nav-pills">
                                 <li class="nav-item col">
-                                    <a class="nav-link" href="#java">Java</a>
+                                    <a class="nav-link nav-link-skills" href="#java">Java</a>
                                 </li>
                                 <li class="nav-item col">
-                                    <a class="nav-link" href="#python">Python</a>
+                                    <a class="nav-link nav-link-skills" href="#python">Python</a>
                                 </li>
 
                                 <li class="nav-item col">
-                                    <a class="nav-link" href="#htmlCssJs">Web</a>
+                                    <a class="nav-link nav-link-skills" href="#web">Web</a>
                                 </li>
                                 <li class="nav-item col last-item">
-                                    <a class="nav-link" href="#other">Other</a>
+                                    <a class="nav-link nav-link-skills" href="#other">Other</a>
                                 </li>
                                 <li class="nav-item dropdown" style="display: none">
                                     <!-- TODO make visible when adding more sections-->
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <br />
-                        <div id="htmlCssJs" class="card shadow-sm">
+                        <div id="web" class="card shadow-sm">
                             <div class="logo_wrapper card-header">
                                 <img src="/static/images/HTMLCSSJSLogo.png" alt="HTML, CSS und Java Script logo"
                                     class="logo card-img-top" />
