@@ -4,114 +4,92 @@
 
 <head>
     <!-- informations for the webbrowser how to handle the webpage-->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="author" content="Rico Finkbeiner" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="author" content="Rico Finkbeiner"/>
     <title>Skills</title>
 
-    <link rel="icon" href="static/images/favicon.png" />
+    <link rel="icon" href="static/images/favicon.png"/>
 
     <!--Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet"/>
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     <!-- Own stylesheet-->
-    <link rel="stylesheet" href="static/css/styles.css" />
+    <link rel="stylesheet" href="static/css/styles.css"/>
     <!-- Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/4ea6bfa531.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
-    <main class="flex-shrink-0">
-        <nav class="navbar bg-dark navbar-expand-sm navbar-dark">
-            <a class="navbar-brand name" href="{{url_for('home')}}"><span class="fist-name">Rico</span><span
-                    class="last-name">Finkbeiner</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+<main class="flex-shrink-0">
+    <nav class="navbar bg-dark navbar-expand-sm navbar-dark">
+        <a class="navbar-brand name" href="{{url_for('home')}}"><span class="fist-name">Rico</span><span
+                class="last-name">Finkbeiner</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{url_for('skill_overview_render_method')}}">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/static/files/lebenslauf_rico_finkbeiner.pdf" download>CV <i class="fa-solid fa-file-arrow-down"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('contact_render_method')}}">Contact</a>
-                    </li>
-                </ul>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('skill_overview_render_method')}}">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/static/files/lebenslauf_rico_finkbeiner.pdf" download>CV <i
+                            class="fa-solid fa-file-arrow-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('contact_render_method')}}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Navbar-->
+
+    <div class="content">
+        <!--title-->
+
+        <div class="heading m-md-5 mt-5 p-md-5 py-2 px-3 text-center bg-light text-black">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 class="display-3"><strong>Skills.</strong></h1>
             </div>
-        </nav>
+        </div>
 
-        <!--Navbar-->
+        <!--skills pc-->
+        <section class="skills pc-view">
 
-        <div class="content">
-            <!--title-->
+            <div class="overview bg-dark m-md-5 my-5 text-center text-white p-3">
 
-            <div class="heading m-md-5 mt-5 p-md-5 py-2 px-3 text-center bg-light text-black">
-                <div class="col-md-5 p-lg-5 mx-auto my-5">
-                    <h1 class="display-3"><strong>Skills.</strong></h1>
+                <!--subtitle, TODO make visible after adding more sections-->
+                <div class="my-2 pt-2 my-md-3 pt-md-2" style="display: none">
+                    <h2 class="display-5">Hard skills</h2>
+                    <p class="lead m-0">
+                        projects, languages and skill level
+                    </p>
                 </div>
-            </div>
 
-            <!--skills mobile and tablet-->
-            <section class="skills mobile-view">
-                <div class="overview bg-dark m-md-5 my-5 text-center text-white p-3">
-                    <!--subtitle, TODO make visible after adding more sections-->
-                    <div class="my-2 pt-2 my-md-3 pt-md-2" style="display: none">
-                        <h2 class="display-5">Hard skills</h2>
-                        <p class="lead m-0">projects, languages and skill level</p>
-                    </div>
-
-                    <nav id="navbar-scrollspy" class="navbar navbar-dark bg-dark px-0">
-                        <row>
-                            <ul class="nav nav-pills">
-                                <li class="nav-item col">
-                                    <a class="nav-link nav-link-skills" href="#java">Java</a>
-                                </li>
-                                <li class="nav-item col">
-                                    <a class="nav-link nav-link-skills" href="#python">Python</a>
-                                </li>
-
-                                <li class="nav-item col">
-                                    <a class="nav-link nav-link-skills" href="#web">Web</a>
-                                </li>
-                                <li class="nav-item col last-item">
-                                    <a class="nav-link nav-link-skills" href="#other">Other</a>
-                                </li>
-                                <li class="nav-item dropdown" style="display: none">
-                                    <!-- TODO make visible when adding more sections-->
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#java">java</a>
-                                        <a class="dropdown-item" href="#python">python</a>
-                                        <div role="separator" class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#three">three</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </row>
-                    </nav>
-                    <div data-spy="scroll" data-target="#navbar-scrollspy" data-offset="10" class="content-to-scroll">
-                        <div id="java" class="card shadow-sm">
+                <!--<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">-->
+                <div class="row display-flex">
+                    <!--java-->
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-3 pt-md-0">
+                        <div class="card shadow-sm">
                             <div class="logo_wrapper card-header">
-                                <img src="/static/images/JavaLogo.svg" alt="Java logo" class="logo card-img-top" />
+                                <img src="/static/images/java.png" alt="Java logo" class="logo card-img-top"/>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Java</h5>
@@ -140,10 +118,14 @@
                                 </div>
                             </div>
                         </div>
-                        <br />
-                        <div id="python" class="card shadow-sm">
+                    </div>
+
+                    <!--python-->
+                    <div class="col-lg-8 col-md-6 col-sm-12 p-3 pt-md-0">
+                        <div class="card shadow-sm">
                             <div class="card-header logo_wrapper">
-                                <img src="/static/images/PythonLogo.svg" alt="Python logo" class="logo card-img-top" />
+                                <img src="/static/images/python.svg" alt="Python logo"
+                                     class="logo card-img-top"/>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Python</h5>
@@ -164,7 +146,9 @@
                                                 <li>
                                                     using Python for data science and machine learning
                                                 </li>
-                                                <li>building web apps as well as GUI Applications</li>
+                                                <li>
+                                                    building web apps as well as GUI Applications
+                                                </li>
                                             </ul>
                                         </dd>
                                         <dt>Tools:</dt>
@@ -180,11 +164,14 @@
                                 </div>
                             </div>
                         </div>
-                        <br />
-                        <div id="web" class="card shadow-sm">
+                    </div>
+
+                    <!--html, css, js-->
+                    <div class="col-lg-8 col-md-6 col-sm-12 py-3">
+                        <div class="card shadow-sm">
                             <div class="logo_wrapper card-header">
-                                <img src="/static/images/HTMLCSSJSLogo.png" alt="HTML, CSS und Java Script logo"
-                                    class="logo card-img-top" />
+                                <img src="/static/images/html.png" alt="HTML logo"
+                                     class="logo card-img-top"/>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">HTML, CSS and JavaScript</h5>
@@ -205,10 +192,14 @@
                                 </div>
                             </div>
                         </div>
-                        <br />
-                        <div id="other" class="card shadow-sm">
+                    </div>
+
+                    <!--more-->
+                    <div class="col-lg-4 col-md-6 col-sm-12 py-3">
+                        <div class="card shadow-sm">
                             <div class="logo_wrapper card-header">
-                                <img src="/static/images/LinuxLogo.svg" alt="Linux logo" class="logo card-img-top" />
+                                <img src="/static/images/coding.png" alt="Coding logo"
+                                     class="logo card-img-top"/>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Additional technical skills</h5>
@@ -219,6 +210,7 @@
                                             <li>Linux</li>
                                             <li>Assembler</li>
                                             <li>VHDL</li>
+                                            <li>Git</li>
                                         </ul>
                                         <dt>Also experienced in using:</dt>
                                         <ul>
@@ -232,190 +224,54 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- TODO add soft sills-->
                 </div>
-            </section>
-
-            <!--skills pc-->
-            <section class="skills pc-view">
-                <div class="overview bg-dark m-md-5 my-5 text-center text-white p-3">
-                    <div class="my-2 pt-2 my-md-3 pt-md-2">
-                        <h2 class="display-5">Hard skills</h2>
-                        <!--subtitle, TODO make visible after adding more sections-->
-                        <p class="lead m-0" style="display: none">
-                            projects, languages and skill level
-                        </p>
-                    </div>
-
-                    <!--<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">-->
-                    <div class="row display-flex">
-                        <!--java-->
-                        <div class="col-lg-4 col-md-6 col-sm-12 p-3 pt-md-0">
-                            <div class="card shadow-sm">
-                                <div class="logo_wrapper card-header">
-                                    <img src="/static/images/JavaLogo.svg" alt="Java logo" class="logo card-img-top" />
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Java</h5>
-                                    <div class="card-text skills-card-content">
-                                        <dl>
-                                            <dt>Skill level:</dt>
-                                            <dd>intermediate</dd>
-                                            <dt>Familiar with:</dt>
-                                            <dd>
-                                                <ul>
-                                                    <li>Object-oriented programming</li>
-                                                    <li>testing (with the JUnit 5 framework)</li>
-                                                    <li>network programming</li>
-                                                    <li>multi-threading</li>
-                                                    <li>...</li>
-                                                </ul>
-                                            </dd>
-                                            <dt>Tools:</dt>
-                                            <dd>Intellij, Eclipse</dd>
-                                            <dt>Project:</dt>
-                                            <dd>
-                                                I built a search engine which uses the page rank
-                                                algorithm in a hands-on module at college
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--python-->
-                        <div class="col-lg-8 col-md-6 col-sm-12 p-3 pt-md-0">
-                            <div class="card shadow-sm">
-                                <div class="card-header logo_wrapper">
-                                    <img src="/static/images/PythonLogo.svg" alt="Python logo"
-                                        class="logo card-img-top" />
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Python</h5>
-                                    <div class="card-text skills-card-content">
-                                        <dl>
-                                            <dt>Skill level:</dt>
-                                            <dd>intermediate</dd>
-                                            <dt>Familiar with:</dt>
-                                            <dd>
-                                                <ul>
-                                                    <li>APIs</li>
-
-                                                    <li>
-                                                        many modern frameworks like Selenium, Beautiful
-                                                        Soup, Request, Flask, Pandas, NumPy, Scikit Learn,
-                                                        Plotly, Matplotlib, Seaborn
-                                                    </li>
-                                                    <li>
-                                                        using Python for data science and machine learning
-                                                    </li>
-                                                    <li>
-                                                        building web apps as well as GUI Applications
-                                                    </li>
-                                                </ul>
-                                            </dd>
-                                            <dt>Tools:</dt>
-                                            <dd>Pycharm, VS Code</dd>
-                                            <dt>Projects:</dt>
-                                            <dd>
-                                                Passwort Manager, Stock News Telegram Bot (API),
-                                                <a href="https://flask.palletsprojects.com/en/2.1.x/">
-                                                    Flask</a>
-                                                Server
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--html, css, js-->
-                        <div class="col-lg-8 col-md-6 col-sm-12 py-3">
-                            <div class="card shadow-sm">
-                                <div class="logo_wrapper card-header">
-                                    <img src="/static/images/HTMLCSSJSLogo.png" alt="HTML, CSS und Java Script logo"
-                                        class="logo card-img-top" />
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">HTML, CSS and JavaScript</h5>
-                                    <div class="card-text skills-card-content">
-                                        <dl>
-                                            <dt>Skill level:</dt>
-                                            <dd>intermediate</dd>
-                                            <dt>Tools:</dt>
-                                            <dd>VS Code, Atom</dd>
-                                            <dt>Project:</dt>
-                                            <dd>
-                                                personal website (the website you are currently on),
-                                                made with the
-                                                <a href="https://getbootstrap.com/">
-                                                    Bootstrap Framework</a>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--more-->
-                        <div class="col-lg-4 col-md-6 col-sm-12 py-3">
-                            <div class="card shadow-sm">
-                                <div class="logo_wrapper card-header">
-                                    <img src="/static/images/LinuxLogo.svg" alt="Linux logo"
-                                        class="logo card-img-top" />
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Additional technical skills</h5>
-                                    <div class="card-text skills-card-content">
-                                        <dl>
-                                            <dt>Basic Knowledge in:</dt>
-                                            <ul>
-                                                <li>Linux</li>
-                                                <li>Assembler</li>
-                                                <li>VHDL</li>
-                                            </ul>
-                                            <dt>Also experienced in using:</dt>
-                                            <ul>
-                                                <li>
-                                                    Microsoft Office apps like PowerPoint, Excel, Word,
-                                                    ...
-                                                </li>
-                                            </ul>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TODO add soft sills-->
-                </div>
-            </section>
-        </div>
-    </main>
-    <!-- footer-->
-    <footer class="footer mt-auto">
-        <div class="bg-dark py-3 px-3 text-center text-white bottom">
+                <!-- TODO add soft sills-->
+            </div>
+        </section>
+    </div>
+</main>
+<!-- footer-->
+<footer class="footer mt-auto">
+    <div class="bg-dark py-3 px-3 text-center text-white bottom">
+        <div class="pt-2 pb-4">
             <div class="pb-2 buttons">
                 <a class="btn btn-outline-light" href="https://github.com/riggggo" role="button">
                     <i class="fa-brands fa-github"></i> GitHub</a>
                 <a class="btn btn-outline-light" href="https://www.linkedin.com/in/rico-finkbeiner-616036204/"
-                    role="button">
+                   role="button">
                     Linked<i class="fa-brands fa-linkedin"></i></a>
             </div>
             <a class="contact_me_button pb-2" href="mailto:finkbeinerrico@gmail.com">
                 <i class="fa-solid fa-envelope"></i> finkbeinerrico@gmail.com
             </a>
-            <div class="bottom">
-                <small>
-                    <p class="copyright text-muted">
-                        ©{{current_year}} Rico Finkbeiner
-                    </p>
-                </small>
-            </div>
         </div>
-    </footer>
+
+        <div class="bottom">
+            <small class="text-muted">
+                Java Icon:<!-- Java Icon--><a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icons
+                        created by Freepik - Flaticon</a>
+                <br>Terminal Icon:
+                    <!-- Terminal Icon--><a href="https://www.flaticon.com/free-icons/code" title="code icons">Code
+                        icons created by Roundicons Premium - Flaticon</a>
+                <br>Web Icon:
+                    <!-- Web Icon--><a href="https://www.flaticon.com/free-icons/web-development"
+                                       title="web development icons">Web development icons created by Freepik -
+                        Flaticon</a>
+                <br>Background:
+                    <!-- Background--><a
+                            href="https://images.pexels.com/photos/6424586/pexels-photo-6424586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            title="coding">Photo by Nemuel Sereti from Pexels</a>
+
+                <div class="py-4">
+                    <p class="copyright text-muted">
+                    ©{{current_year}} Rico Finkbeiner
+                </p>
+                </div>
+
+            </small>
+        </div>
+    </div>
+</footer>
 </body>
 
 </html>

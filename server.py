@@ -17,20 +17,14 @@ MY_BIRTHDAY = dt.datetime(2003, 9, 2)
 def home():
     current_date = dt.datetime.now()
     current_year = current_date.year
-    
     my_age = relativedelta.relativedelta(current_date, MY_BIRTHDAY).years
 
     return render_template("index.html", current_year=current_year, my_age=my_age)
 
 
-@app.route("/skills/<skill>")
-def skill_render_method(skill):
-    return render_template("skill.html", skill=skill)
-
-
 @app.route("/skills")
 def skill_overview_render_method():
-    return render_template("skill.html", skill="all")
+    return render_template("skill.html", skill="all", current_year=dt.datetime.now().year)
 
 
 @app.route("/contact", methods=["POST", "GET"])
@@ -38,7 +32,7 @@ def contact_render_method():
     if request.method == "GET":
         mode = "get"
         # show the contact form
-        return render_template("contact.html", mode=mode)
+        return render_template("contact.html", mode=mode, current_year=dt.datetime.now().year)
     else:
         # submit data and show a success/ status message
         if request.form.get("phone_number") == "":
@@ -48,10 +42,10 @@ def contact_render_method():
                                  phone_number=request.form["phone_number"])
         if success:
             mode = "send"
-            return render_template("contact.html", mode=mode)
+            return render_template("contact.html", mode=mode, current_year=dt.datetime.now().year)
         else:
             mode = "error"
-            return render_template("contact.html", mode=mode)
+            return render_template("contact.html", mode=mode, current_year=dt.datetime.now().year)
 
 port = 587
 def send_email(name, email, message, **kwargs):
