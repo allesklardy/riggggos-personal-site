@@ -1,6 +1,4 @@
 import os
-
-import pytz
 from flask import *
 import datetime as dt
 from dateutil import relativedelta
@@ -71,4 +69,4 @@ def send_email(name, email, message, **kwargs):
 
 
 if __name__ == "__main__":
-    app.run(debug=False)  # Debug mode
+    app.run(host="0.0.0.0", debug=False, port=4000)  # Debug mode
