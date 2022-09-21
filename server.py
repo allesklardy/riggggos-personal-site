@@ -13,7 +13,7 @@ SEND_TO_MAIL = "finkbeinerrico@gmail.com"
 MY_BIRTHDAY = dt.datetime(2003, 9, 2)
 
 
-@app.route("/website1")
+@app.route("/")
 def home():
     current_date = dt.datetime.now()
     current_year = current_date.year
@@ -22,12 +22,12 @@ def home():
     return render_template("index.html", current_year=current_year, my_age=my_age)
 
 
-@app.route("/website1/skills")
+@app.route("/skills")
 def skill_overview_render_method():
     return render_template("skill.html", skill="all", current_year=dt.datetime.now().year)
 
 
-@app.route("/website1/contact", methods=["POST", "GET"])
+@app.route("/contact", methods=["POST", "GET"])
 def contact_render_method():
     if request.method == "GET":
         mode = "get"
