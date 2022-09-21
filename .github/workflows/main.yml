@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3 # reuses already existing GitHub action   
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/website_1.0
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/website_1.0 --build-arg MY_MAIL_PASSWORD=${{ secrets.MY_MAIL_PASSWORD }}
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
