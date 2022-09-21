@@ -1,11 +1,13 @@
+from multiprocessing.forkserver import connect_to_new_process
 import os
+from sqlite3 import connect
 from flask import *
 import datetime as dt
 from dateutil import relativedelta
 import smtplib
 # using jinja
 app = Flask(__name__)  # name of the current directory
-MY_MAIL = "finkbeinerrico.service@gmail.com"
+MY_MAIL = "finkbeinerrico.service@yahoo.com"
 MY_MAIL_PASSWORD = os.environ.get("MY_MAIL_PASSWORD")
 SEND_TO_MAIL = "finkbeinerrico@gmail.com"
 MY_BIRTHDAY = dt.datetime(2003, 9, 2)
@@ -48,8 +50,10 @@ def contact_render_method():
 port = 587
 def send_email(name, email, message, **kwargs):
     try:
-        with smtplib.SMTP("smtp.gmail.com", port) as connection:  # yahoo: smtp.mail.yahoo.com
-            connection.starttls()  # secure communication
+        with smtplib.SMTP("smtp.mail.yahoo.com", port) as connection:  # yahoo: smtp.mail.yahoo.com
+            # secure communication
+            connection.set_debuglevel(1)
+            connection.starttls()
             connection.login(user=MY_MAIL, password=MY_MAIL_PASSWORD)
             phone_number = kwargs.get("phone_number", "-")
             current_date = dt.datetime.now()
@@ -60,7 +64,7 @@ def send_email(name, email, message, **kwargs):
             connection.sendmail(from_addr=MY_MAIL,
                                 to_addrs=SEND_TO_MAIL,
                                 msg=f"Subject:{subject}\n\n{body}")
-        # connection.close() no need if in with block
+        # connection.close() no need when using with block
     except Exception as ex:
         print(ex)
         return False
