@@ -7,7 +7,7 @@ from dateutil import relativedelta
 import smtplib
 # using jinja
 app = Flask(__name__)  # name of the current directory
-app.config['APPLICATION_ROOT'] = '/website1'
+# app.config['APPLICATION_ROOT'] = '/website1'
 MY_MAIL = "finkbeinerrico.service@yahoo.com"
 MY_MAIL_PASSWORD = os.environ.get("MY_MAIL_PASSWORD")
 SEND_TO_MAIL = "finkbeinerrico@gmail.com"
