@@ -1,11 +1,18 @@
+@font-face {
+  font-family: "poppins";
+  src: url("./poppins/Poppins-Regular.ttf");
+}
+
+
 body {
   background-image: url('../images/code.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppins', sans-serif;
 
 }
+
 @media (max-width: 900px) { /* 900px or less*/
   .display-3{
     font-size: xx-large;
